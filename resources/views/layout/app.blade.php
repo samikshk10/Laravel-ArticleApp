@@ -27,13 +27,32 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            
+
+                    @guest
+                      
+                    
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="{{ route('dashboard') }}">Dashboard</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="{{ route('login') }}">Login</a>
               </li>
+              <li>
+              {{--  <form action="{{route('logout')}}" method="get">
+                <button type="submit" >LogOut</button>
+            </form>  --}}
+          
+          </li>
 
+               {{--  <li class="nav-item">
+                <a class="nav-link" href="{{ route('logout') }}">@if(session()->has('name'))Logout @endif</a>
+              </li>  --}}
+@endguest
+
+@auth 
+<a href="{{route('loginuser')}}" class="nav-link">{{auth()->user()->name}}</a>
+@endauth
             
             </ul>
             <form class="d-flex" role="search">

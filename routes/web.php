@@ -15,8 +15,11 @@ use App\Http\Controllers\registerController;
 |
 */
 
-Route::get('/', [socialController::class, 'index'])->name('dashboard');
+Route::get('/', [socialController::class, 'index'])->name('dashboard')->middleware(['auth']);
 Route::get('/login', [socialController::class, 'login'])->name('login');
 Route::get('/signup', [socialController::class, 'signup'])->name('signup');
+
+
 Route::post('/login', [registerController::class, 'loginuser'])->name('loginuser');
 Route::post('/signup', [registerController::class, 'registeruser'])->name('signupuser');
+Route::get('/logout', [registerController::class, 'logout'])->name('logout');

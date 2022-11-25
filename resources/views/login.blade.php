@@ -18,7 +18,7 @@
     </div>
       @endif
 
-<form action="{{ route('loginuser') }}" method="post" style="color:  rgb(30, 43, 46)">
+<form action="{{ route('loginuser') }}" method="post" >
   @csrf
     <div class="mb-3">
       <label for="exampleInputEmail1" class="form-label">Email Address</label>

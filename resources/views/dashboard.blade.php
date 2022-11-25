@@ -3,4 +3,6 @@
 @section('content')
 <h1 class="text-center">Welcome @if(session()->has('name'))<span style="text-transform: capitalize">{{ session()->get('name')}} </span>@else To DashBoard @endif   </h1>
 
-@endsection
+@endsection  <form action="{{route('logout')}}" method="get">
+    <button type="submit" >LogOut</button>
+</form>
